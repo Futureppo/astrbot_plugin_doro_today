@@ -1,3 +1,14 @@
+</div>
+
+<div align="center">
+
+![:name](https://count.getloli.com/@astrbot_plugin_doro_today?name=astrbot_plugin_doro_today&theme=original-new&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
+
+</div>
+
+
+
+
 # 🐱 astrbot_plugin_doro_today
 
 一个AstrBot插件，可以从Doro结局图片中随机抽取一张并发送给用户，同时@发送者。
