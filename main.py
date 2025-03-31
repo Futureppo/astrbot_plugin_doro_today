@@ -46,7 +46,7 @@ class DoroTodayPlugin(Star):
         
         message_chain = [
             At(qq=sender_id),
-            Plain(f"，你今天的doro结局是：{image_name}"),
+            Plain(f" 你今天的doro结局是：{image_name}"),
             Image.fromFileSystem(image_path)  
         ]
         
