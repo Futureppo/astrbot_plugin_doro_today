@@ -1,6 +1,6 @@
 from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
 from astrbot.api.star import Context, Star, register
-from astrbot.api.message_components import At, Image
+from astrbot.api.message_components import At, Image, Plain
 import os
 import random
 
@@ -15,11 +15,15 @@ class DoroTodayPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
 
-    @filter.command("dorotoday", alias={'今日doro', 'doro结局', 'doro今日'})
+    @filter.command("dorotoday", alias={'今日doro', 'doro结局', 'dorotoday'})
     async def dorotoday(self, event: AstrMessageEvent):
         '''随机抽取一张doro结局并发送，同时@发送者'''
-        # 获取发送者的ID
+        # 获取发送者的ID和昵称
         sender_id = event.get_sender_id()
+        try:
+            sender_name = event.get_sender_name()
+        except AttributeError:
+            sender_name = str(sender_id)
         
         # 获取doro文件夹的路径
         doro_folder = os.path.join(os.path.dirname(__file__), "doro")
@@ -38,9 +42,13 @@ class DoroTodayPlugin(Star):
         
         random_image = random.choice(image_files)
         image_path = os.path.join(doro_folder, random_image)
+        image_name = os.path.splitext(random_image)[0]  # 去除文件扩展名
         
         message_chain = [
             At(qq=sender_id),
-            Image.fromFileSystem(image_path)
+            Plain(f"，你今天的doro结局是：{image_name}"),
+            Image.fromFileSystem(image_path)  
         ]
+        
+        # 发送消息
         yield event.chain_result(message_chain)
