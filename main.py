@@ -15,7 +15,7 @@ class DoroTodayPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
 
-    @filter.command("dorotoday")
+    @filter.command("dorotoday", alias={'今日doro', 'doro结局', 'doro今日'})
     async def dorotoday(self, event: AstrMessageEvent):
         '''从doro文件夹中随机抽取一张图片并发送，同时@发送者'''
         # 获取发送者的ID
