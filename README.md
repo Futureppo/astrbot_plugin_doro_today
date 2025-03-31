@@ -1,6 +1,6 @@
 # 🐱 astrbot_plugin_doro_today
 
-一个AstrBot插件，用于从Doro结局图片中随机抽取一张并发送给用户，同时@发送者。
+一个AstrBot插件，可以从Doro结局图片中随机抽取一张并发送给用户，同时@发送者。
 
 ## 🚀 功能介绍
 
