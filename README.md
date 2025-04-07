@@ -20,9 +20,13 @@
 - **使用**：发送指令`/dorotoday`或者`/今日doro`,`/doro结局`, `/doro今日`即可触发插件功能。
 - 插件小版本更新（0.0.X）是添加图片，建议按需更新
 
-
 ## 🤝 图片来源
+
 1.[GitHub - OppenHaix/doro-today](https://github.com/OppenHaix/doro-today)<br>
 2.[GitHub - bvzrays](https://github.com/bvzrays)<br>
 3.[GitHub - 悦己](https://github.com/gswenxue)<br>
 4.[GitHub - Futureppo](https://github.com/Futureppo)<br>
+
+## 🌟 支持
+
+- Star 这个项目！
