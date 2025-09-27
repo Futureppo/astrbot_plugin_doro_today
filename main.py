@@ -24,11 +24,9 @@ class DoroTodayPlugin(Star):
             sender_name = event.get_sender_name()
         except AttributeError:
             sender_name = str(sender_id)
-        
-        # 获取doro文件夹的路径
+
+
         doro_folder = os.path.join(os.path.dirname(__file__), "doro")
-        
-        # 检查doro文件夹是否存在
         if not os.path.exists(doro_folder):
             yield event.plain_result("doro文件夹不存在，请检查插件目录")
             return
@@ -42,7 +40,7 @@ class DoroTodayPlugin(Star):
         
         random_image = random.choice(image_files)
         image_path = os.path.join(doro_folder, random_image)
-        image_name = os.path.splitext(random_image)[0]  # 去除文件扩展名
+        image_name = os.path.splitext(random_image)[0] 
         
         message_chain = [
             At(qq=sender_id),
