@@ -8,7 +8,7 @@ import random
     "astrbot_plugin_doro_today",
     "Futureppo",
     "今天doro是什么结局？",
-    "1.0.0",
+    "1.0.13",
     "https://github.com/your-repo/astrbot_plugin_doro_today"
 )
 class DoroTodayPlugin(Star):
@@ -43,7 +43,7 @@ class DoroTodayPlugin(Star):
         image_name = os.path.splitext(random_image)[0] 
         
         message_chain = [
-            At(qq=sender_id),
+            # At(qq=sender_id),
             Plain(f" 你今天的doro结局是：{image_name}"),
             Image.fromFileSystem(image_path)  
         ]
